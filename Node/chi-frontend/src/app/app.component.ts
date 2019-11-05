@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chi-frontend';
+  opened: boolean;
+
+  ngOnInit() {
+    this.opened = false;
+  }
 }

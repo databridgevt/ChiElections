@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 //Angular Material Components
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+//Material Imports
 import {MatCheckboxModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
@@ -34,8 +36,13 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
+//CDK Imports
+import {LayoutModule} from '@angular/cdk/layout';
+
+//Angular Imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [
@@ -74,7 +81,8 @@ import { AppComponent } from './app.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

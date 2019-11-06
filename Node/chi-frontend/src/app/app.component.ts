@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,12 @@ export class AppComponent {
   title = 'chi-frontend';
   opened: boolean;
 
+  constructor(breakpointObserver: BreakpointObserver) {
+    //Add breakpoints here
+  }
+
+
   ngOnInit() {
-    this.opened = false;
+    this.opened = true;
   }
 }

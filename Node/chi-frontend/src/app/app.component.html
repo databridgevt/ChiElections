@@ -1,8 +1,8 @@
-
+<!--Main Toolbar-->
 <mat-toolbar color="primary">
   <mat-toolbar-row>
       <button mat-icon-button color="secondary" aria-label="Menu"
-        (click)="sidenav.toggle()">
+        (click)="sidenav.toggle()"> <!--Call sidenav.toggle() to open/close the side menu-->
       <mat-icon>menu</mat-icon>
     </button>
     <span>Chicago Elections</span>
@@ -10,19 +10,20 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
+  <!--Two way bind the opened boolean to programtically open side menu-->
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
     <mat-toolbar color="primary">
       <mat-toolbar-row>
         <span>Side Bar</span>
       </mat-toolbar-row>
     </mat-toolbar>
+    <p>A Link</p>
   </mat-sidenav>
-  <mat-sidenav-content>  
+  <mat-sidenav-content>
+    <!--Routes get generated as Siblings to router-outlet-->
+    <router-outlet></router-outlet> 
     <p>Everything else goes here!!!</p>
     <br/>
     <p>And more stuff!!</p>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-<router-outlet></router-outlet>

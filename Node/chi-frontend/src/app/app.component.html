@@ -2,28 +2,63 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
       <button mat-icon-button color="secondary" aria-label="Menu"
-        (click)="sidenav.toggle()"> <!--Call sidenav.toggle() to open/close the side menu-->
+        (click)="sidenav.toggle()"> <!--Call sidenav.toggle to open/close the side menu-->
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Chicago Elections</span>
+
+    <span class="fill-space">
+      <!--Fill Remaining Space For Alignment Purposes-->
+    </span>
+
+    <span>City Elections Project</span>
+
+    <span class="fill-space">
+      <!--Fill Remaining Space for Alignment Purposes-->
+    </span>
+
+    <a mat-icon-button href="https://twitter.com/" >
+      <fa-icon [icon]="faTwitter"></fa-icon>
+    </a>
+
+    <!--Items rendered in  the extended Menu-->
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>Login</button>
+      <button mat-menu-item>Logout</button>
+    </mat-menu>
+  
+      <!--Icon Button that represents a Right-Aligned Menu-->
+      <button mat-icon-button color="secondary" 
+        aria-label="Login" 
+        [matMenuTriggerFor]="appMenu">
+        <mat-icon>person</mat-icon>
+      </button>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
+<!--The rest of the webpage needs to be rendered inside of the sidenav,
+    so the pretty animation can affect all relevant parts of the 
+    webpage-->
 <mat-sidenav-container>
-  <!--Two way bind the opened boolean to programtically open side menu-->
+  <!--Two way bind the opened boolean to programmatically open side menu-->
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span>Side Bar</span>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <p>A Link</p>
+    <!--Links to Locations in app should go here-->
+
+    <!-- Vertical Tabs Idea 
+    <nav mat-tab-nav-bar color="accent">
+      <a mat-tab-link href=".">First Link</a>
+      <a mat-tab-link href=".">Second Link</a>
+    </nav> 
+    -->
+    <span>Links Here</span>
   </mat-sidenav>
   <mat-sidenav-content>
     <!--Routes get generated as Siblings to router-outlet-->
     <router-outlet></router-outlet> 
-    <p>Everything else goes here!!!</p>
-    <br/>
-    <p>And more stuff!!</p>
+    <mat-card>
+      <mat-card-content>
+        <span>Outside Stuff</span>
+      </mat-card-content>
+    </mat-card>
   </mat-sidenav-content>
 </mat-sidenav-container>

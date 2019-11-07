@@ -39,6 +39,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 //CDK Imports
 import {LayoutModule} from '@angular/cdk/layout';
 
+//FontAwesome
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+
 //Angular Imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -82,7 +85,8 @@ import { AppComponent } from './app.component';
     MatSortModule,
     MatPaginatorModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

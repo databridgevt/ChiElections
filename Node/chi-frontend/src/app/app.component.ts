@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,11 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 })
 export class AppComponent {
   title = 'chi-frontend';
+  //Store the state of the sidenav
   opened: boolean;
+
+  //Store the twitter fontawesome icon
+  faTwitter = faTwitter
 
   constructor(breakpointObserver: BreakpointObserver) {
     //Add breakpoints here

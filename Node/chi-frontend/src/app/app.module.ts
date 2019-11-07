@@ -47,13 +47,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CandidatesComponent } from './candidates/candidates.component';
+import { CitiesComponent } from './cities/cities.component';
+import { GraphsComponent } from './graphs/graphs.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CandidatesComponent,
+    CitiesComponent,
+    GraphsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserAnimationsModule,

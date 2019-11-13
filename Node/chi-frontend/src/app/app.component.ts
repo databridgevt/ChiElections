@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DomSanitizer } from '@angular/platform-browser';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -9,12 +9,12 @@ import { MatIconRegistry } from '@angular/material';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'chi-frontend';
-  //Store the state of the sidenav
+  // Store the state of the sidenav
   opened: boolean;
 
-  //Store the twitter fontawesome icon
+  // Store the twitter fontawesome icon
   faTwitter = faTwitter;
 
   constructor(

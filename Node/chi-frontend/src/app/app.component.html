@@ -83,11 +83,11 @@
             </a>
         </div>
     </mat-sidenav>
-    <mat-sidenav-content (click)="sidenav.close()">
-        <!--Routes get generated as Siblings to router-outlet-->
-        <router-outlet></router-outlet>
+    <!--Implicit Main Content-->
 
-        <!--Make Footer appear underneath main page content-->
-        <app-footer></app-footer>
-    </mat-sidenav-content>
+    <!--Routes get generated as Siblings to router-outlet-->
+    <router-outlet></router-outlet>
+
+    <!--Make Footer appear underneath main page content-->
+    <app-footer></app-footer>
 </mat-sidenav-container>

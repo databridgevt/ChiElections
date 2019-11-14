@@ -32,3 +32,10 @@ export class AppComponent implements OnInit {
     );
   }
 }
+
+@Component({
+  selector: 'app-login-dialog',
+  templateUrl: './login-dialog.html',
+  styleUrls: ['./app.component.sass'],
+})
+export class LoginDialog {}

@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CitiesComponent implements OnInit {
   cities: String[] = ['Chicago', 'New York'];
 
+  selected: String = 'Chicago';
+
   constructor() {}
 
   ngOnInit() {}

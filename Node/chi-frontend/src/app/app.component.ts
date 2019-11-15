@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { MatIconRegistry, MatDialog } from '@angular/material';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
+    private router: Router,
     public dialog: MatDialog,
   ) {}
 
@@ -47,6 +49,13 @@ export class AppComponent implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef
+      .afterClosed()
+      .subscribe()
+      .unsubscribe();
+  }
+
+  logout(): void {
+    this.router.navigate(['/']);
   }
 }

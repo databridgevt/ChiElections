@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-dialog',
@@ -14,6 +15,7 @@ export class LoginDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<LoginDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -22,6 +24,7 @@ export class LoginDialogComponent implements OnInit {
 
   async login(): Promise<any> {
     this.inProgress = true;
+    console.log(this.data)
     await this.sleep(1500);
     this.inProgress = false;
     this.dialogRef.close();

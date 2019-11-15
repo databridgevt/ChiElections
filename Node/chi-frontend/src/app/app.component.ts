@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DomSanitizer } from '@angular/platform-browser';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry, MatDialog } from '@angular/material';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,14 @@ export class AppComponent implements OnInit {
   // Store the twitter fontawesome icon
   faTwitter = faTwitter;
 
+  // Store the username and password from the login dialog.
+  username: string;
+  password: string;
+
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
+    public dialog: MatDialog,
   ) {}
 
   ngOnInit() {
@@ -31,11 +37,16 @@ export class AppComponent implements OnInit {
       ),
     );
   }
-}
 
-@Component({
-  selector: 'app-login-dialog',
-  templateUrl: './login-dialog.html',
-  styleUrls: ['./app.component.sass'],
-})
-export class LoginDialog {}
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+      width: '250px',
+      data: {
+        username: this.username,
+        password: this.password,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe();
+  }
+}

@@ -54,6 +54,7 @@ import { CandidatesComponent } from './candidates/candidates.component';
 import { CitiesComponent } from './cities/cities.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { FooterComponent } from './footer/footer.component';
     CitiesComponent,
     GraphsComponent,
     FooterComponent,
+    LoginDialogComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -104,6 +106,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     HttpClientModule,
   ],
+  // Components USed for Dialog need to be placed in entryComponents
+  entryComponents: [LoginDialogComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,10 +1,13 @@
+//Angular Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 //Angular Material Components
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//Material Imports
 import { MatCheckboxModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
@@ -41,11 +44,6 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 //FontAwesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-//Angular Imports
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 
 //My Components
 import { HomeComponent } from './home/home.component';
@@ -105,8 +103,9 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     FontAwesomeModule,
     BrowserModule,
     HttpClientModule,
+    FormsModule
   ],
-  // Components USed for Dialog need to be placed in entryComponents
+  // Components Used for Dialog need to be placed in entryComponents
   entryComponents: [LoginDialogComponent],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-cities',
   templateUrl: './cities.component.html',
-  styleUrls: ['./cities.component.sass']
+  styleUrls: ['./cities.component.sass'],
 })
 export class CitiesComponent implements OnInit {
+  cities: String[] = ['Chicago', 'New York'];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

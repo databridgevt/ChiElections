@@ -16,7 +16,7 @@
         Will need to use *ngFor directive to generate as
         many cards as a search returns or filters.-->
     <mat-grid-tile *ngIf="matchesFilter('Harold Washington')">
-        <mat-card>
+        <mat-card style="height: 450px; width: 350px">
             <mat-card-header>
                 <div mat-card-avatar class="washington-header-image"></div>
                 <mat-card-title>Harold Washington</mat-card-title>
@@ -47,7 +47,7 @@
     </mat-grid-tile>
 
     <mat-grid-tile *ngIf="matchesFilter('Levi Boone')">
-        <mat-card>
+        <mat-card style="height: 450px; width: 350px">
             <mat-card-header>
                 <div mat-card-avatar class="boone-header-image"></div>
                 <mat-card-title>Levi Boone</mat-card-title>
@@ -78,7 +78,7 @@
     </mat-grid-tile>
 
     <mat-grid-tile *ngIf="matchesFilter('Edward Joseph Kelly')">
-        <mat-card>
+        <mat-card style="height: 450px; width: 350px">
             <mat-card-header>
                 <div mat-card-avatar class="kelly-header-image"></div>
                 <mat-card-title>Edward Jospeh Kelly</mat-card-title>

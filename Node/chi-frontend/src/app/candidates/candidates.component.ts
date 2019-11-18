@@ -26,6 +26,7 @@ export class CandidatesComponent implements OnInit, OnDestroy {
       Breakpoints.HandsetPortrait,
       Breakpoints.Small,
       Breakpoints.Medium,
+      Breakpoints.Tablet,
       Breakpoints.Large,
     ]);
 
@@ -42,9 +43,11 @@ export class CandidatesComponent implements OnInit, OnDestroy {
     if (result.breakpoints[Breakpoints.HandsetPortrait]) {
       console.log('Small Screen');
       this.colNum = 1;
-    } else {
-      console.log('Large Screen');
+    } else if (result.breakpoints[Breakpoints.Medium]) {
       this.colNum = 2;
+    } else if (result.breakpoints[Breakpoints.Large]) {
+      console.log('Large Screen');
+      this.colNum = 3;
     }
   }
 

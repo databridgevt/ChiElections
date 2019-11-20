@@ -67,6 +67,7 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
   ],
   imports: [
     BrowserAnimationsModule,
+    BrowserModule,
     MatCheckboxModule,
     MatCheckboxModule,
     MatButtonModule,
@@ -101,7 +102,6 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     AppRoutingModule,
     LayoutModule,
     FontAwesomeModule,
-    BrowserModule,
     HttpClientModule,
     FormsModule
   ],

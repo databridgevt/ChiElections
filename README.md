@@ -63,3 +63,5 @@ npx ng serve
 ```
 
 You really don't need to install the CLI globally if you always want to use `npx`, but I'd recommend a global install for ease of use.
+
+Finally, by default, the app is served on port 4200. Point your browser at http://localhost:4200 to see the front-end.

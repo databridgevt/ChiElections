@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-card style=\"height: 95%; width: 92.5%\">\n    <mat-card-content>\n        <div id=\"home-container\">\n            <h1 id=\"welcome-heading\">Welcome</h1>\n            <br />\n            <mat-icon id=\"how-1\" class=\"home-icon\">\n                how_to_vote\n            </mat-icon>\n            <br />\n            <mat-icon class=\"home-icon\">where_to_vote</mat-icon>\n        </div>\n    </mat-card-content>\n</mat-card>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-card style=\"height: 95%; width: 92.5%\">\n    <mat-card-content>\n        <div id=\"home-container\">\n            <h1 id=\"welcome-heading\">Welcome</h1>\n            <br />\n            <!-- \n            <mat-icon id=\"how-1\" class=\"home-icon\">\n                how_to_vote\n            </mat-icon>\n            <br />\n            <mat-icon class=\"home-icon\">where_to_vote</mat-icon>\n            -->\n        </div>\n    </mat-card-content>\n</mat-card>\n");
 
 /***/ }),
 
@@ -370,11 +370,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
-/* harmony import */ var _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphs/graphs.component */ "./src/app/graphs/graphs.component.ts");
-/* harmony import */ var _cities_cities_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cities/cities.component */ "./src/app/cities/cities.component.ts");
-/* harmony import */ var _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./candidates/candidates.component */ "./src/app/candidates/candidates.component.ts");
-
+/* harmony import */ var _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphs/graphs.component */ "./src/app/graphs/graphs.component.ts");
+/* harmony import */ var _cities_cities_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cities/cities.component */ "./src/app/cities/cities.component.ts");
+/* harmony import */ var _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./candidates/candidates.component */ "./src/app/candidates/candidates.component.ts");
 
 
 
@@ -383,12 +381,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: 'candidates', component: _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_7__["CandidatesComponent"] },
-    { path: 'cities', component: _cities_cities_component__WEBPACK_IMPORTED_MODULE_6__["CitiesComponent"] },
-    { path: 'graphs', component: _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_5__["GraphsComponent"] },
+    { path: 'candidates', component: _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_6__["CandidatesComponent"] },
+    { path: 'cities', component: _cities_cities_component__WEBPACK_IMPORTED_MODULE_5__["CitiesComponent"] },
+    { path: 'graphs', component: _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_4__["GraphsComponent"] },
     { path: 'home', redirectTo: '' },
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
-    { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_4__["NotFoundComponent"] },
+    { path: '**', redirectTo: '' },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };

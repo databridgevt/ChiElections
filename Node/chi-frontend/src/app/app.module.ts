@@ -109,7 +109,6 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
   // Components Used for Dialog need to be placed in entryComponents
   entryComponents: [LoginDialogComponent],
   providers: [
-    { provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
   bootstrap: [AppComponent],
 })

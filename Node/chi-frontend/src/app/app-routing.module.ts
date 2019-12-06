@@ -5,6 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { CitiesComponent } from './cities/cities.component';
 import { CandidatesComponent } from './candidates/candidates.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   { path: 'candidates', component: CandidatesComponent },
@@ -16,7 +17,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy}
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -43,6 +43,10 @@ export class AppComponent implements OnInit {
       .unsubscribe();
   }
 
+  gotToLink(url: string): void {
+    
+  }
+
   logout(): void {
     this.router.navigate(['/']);
   }

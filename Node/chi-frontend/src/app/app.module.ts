@@ -53,6 +53,7 @@ import { CitiesComponent } from './cities/cities.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,9 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
   ],
   // Components Used for Dialog need to be placed in entryComponents
   entryComponents: [LoginDialogComponent],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

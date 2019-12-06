@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar style=\"height: 100px\" color=\"secondary\" class=\"mat-elevation-z4\">\n    <mat-form-field>\n        <mat-label>Select City</mat-label>\n        <mat-select [(value)]=\"selected\">\n            <!--<mat-option *ngFor=\"let city of cities\" [value]=\"city\">\n                {{ city }}\n            </mat-option>-->\n            <mat-option value=\"Chicago\">\n                Chicago\n            </mat-option>\n            <mat-option value=\"New York\">\n                New York\n            </mat-option>\n        </mat-select>\n    </mat-form-field>\n</mat-toolbar>\n\n<div>\n    <mat-card>\n        <mat-card-header>\n            <mat-card-title>\n                1910\n            </mat-card-title>\n        </mat-card-header>\n        <mat-card-content>\n            Between 1910 and 1930, the African American population of Chicago\n            increased dramatically, from 44,103 to 233,903. This Great Migration\n            had an immense cultural impact, called the Chicago Black\n            Renaissance, part of the New Negro Movement, in art, literature, and\n            music. Continuing racial tensions and violence, such as the Chicago\n            Race Riot of 1919, also occurred.\n        </mat-card-content>\n\n        <img\n            mat-card-image\n            src=\"../../assets/images/Sears_Tower_(2856915307).jpg\"\n        />\n\n        <mat-card-header>\n            <mat-card-title>\n                1920\n            </mat-card-title>\n        </mat-card-header>\n        <mat-card-content>\n            The ratification of the 18th amendment to the Constitution in 1919\n            made the production and sale (including exportation) of alcoholic\n            beverages illegal in the United States. This ushered in the\n            beginning of what is known as the Gangster Era, a time that roughly\n            spans from 1919 until 1933 when Prohibition was repealed. The 1920s\n            saw gangsters, including Al Capone, Dion O'Banion, Bugs Moran and\n            Tony Accardo battle law enforcement and each other on the streets of\n            Chicago during the Prohibition era. Chicago was the location of the\n            infamous St. Valentine's Day Massacre in 1929, when Al Capone sent\n            men to gun down members of a rival gang, North Side, led by Bugs\n            Moran.\n        </mat-card-content>\n    </mat-card>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar style=\"height: 100px\" color=\"secondary\" class=\"mat-elevation-z4\">\n    <mat-form-field>\n        <mat-label>Select City</mat-label>\n        <mat-select [(value)]=\"selected\">\n            <!--<mat-option *ngFor=\"let city of cities\" [value]=\"city\">\n                {{ city }}\n            </mat-option>-->\n            <mat-option value=\"Chicago\">\n                Chicago\n            </mat-option>\n            <mat-option value=\"New York\">\n                New York\n            </mat-option>\n        </mat-select>\n    </mat-form-field>\n</mat-toolbar>\n\n<div>\n    <mat-card>\n        <mat-card-header>\n            <mat-card-title>\n                1910\n            </mat-card-title>\n        </mat-card-header>\n        <mat-card-content>\n            Between 1910 and 1930, the African American population of Chicago\n            increased dramatically, from 44,103 to 233,903. This Great Migration\n            had an immense cultural impact, called the Chicago Black\n            Renaissance, part of the New Negro Movement, in art, literature, and\n            music. Continuing racial tensions and violence, such as the Chicago\n            Race Riot of 1919, also occurred.\n        </mat-card-content>\n\n        <img\n            mat-card-image\n            src=\"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1413&q=80\"\n        />\n\n        <mat-card-header>\n            <mat-card-title>\n                1920\n            </mat-card-title>\n        </mat-card-header>\n        <mat-card-content>\n            The ratification of the 18th amendment to the Constitution in 1919\n            made the production and sale (including exportation) of alcoholic\n            beverages illegal in the United States. This ushered in the\n            beginning of what is known as the Gangster Era, a time that roughly\n            spans from 1919 until 1933 when Prohibition was repealed. The 1920s\n            saw gangsters, including Al Capone, Dion O'Banion, Bugs Moran and\n            Tony Accardo battle law enforcement and each other on the streets of\n            Chicago during the Prohibition era. Chicago was the location of the\n            infamous St. Valentine's Day Massacre in 1929, when Al Capone sent\n            men to gun down members of a rival gang, North Side, led by Bugs\n            Moran.\n        </mat-card-content>\n    </mat-card>\n</div>\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-card style=\"height: 95%; width: 92.5%\">\n    <mat-card-content>\n        <div id=\"home-container\">\n            <h1 id=\"welcome-heading\">Welcome</h1>\n            <br />\n            <!-- \n            <mat-icon id=\"how-1\" class=\"home-icon\">\n                how_to_vote\n            </mat-icon>\n            <br />\n            <mat-icon class=\"home-icon\">where_to_vote</mat-icon>\n            -->\n        </div>\n    </mat-card-content>\n</mat-card>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-card style=\"height: 95%;\">\n    <mat-card-content>\n        <div id=\"home-container\">\n            <h1 id=\"welcome-heading\">Welcome</h1>\n            <br />\n            <!--\n            <mat-icon id=\"how-1\" class=\"home-icon\">\n                how_to_vote\n            </mat-icon>\n            <br />\n            <mat-icon class=\"home-icon\">where_to_vote</mat-icon>\n            -->\n        </div>\n    </mat-card-content>\n</mat-card>\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>not-found works!</p>");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>not-found works!</p>\n\n\n<app-footer></app-footer>");
 
 /***/ }),
 
@@ -370,9 +370,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphs/graphs.component */ "./src/app/graphs/graphs.component.ts");
-/* harmony import */ var _cities_cities_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cities/cities.component */ "./src/app/cities/cities.component.ts");
-/* harmony import */ var _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./candidates/candidates.component */ "./src/app/candidates/candidates.component.ts");
+/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
+/* harmony import */ var _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphs/graphs.component */ "./src/app/graphs/graphs.component.ts");
+/* harmony import */ var _cities_cities_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cities/cities.component */ "./src/app/cities/cities.component.ts");
+/* harmony import */ var _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./candidates/candidates.component */ "./src/app/candidates/candidates.component.ts");
+
 
 
 
@@ -381,12 +383,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: 'candidates', component: _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_6__["CandidatesComponent"] },
-    { path: 'cities', component: _cities_cities_component__WEBPACK_IMPORTED_MODULE_5__["CitiesComponent"] },
-    { path: 'graphs', component: _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_4__["GraphsComponent"] },
+    { path: 'candidates', component: _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_7__["CandidatesComponent"] },
+    { path: 'cities', component: _cities_cities_component__WEBPACK_IMPORTED_MODULE_6__["CitiesComponent"] },
+    { path: 'graphs', component: _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_5__["GraphsComponent"] },
     { path: 'home', redirectTo: '' },
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
-    { path: '**', redirectTo: '' },
+    { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_4__["NotFoundComponent"] },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -947,8 +949,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _users_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../users.service */ "./src/app/users.service.ts");
-
 
 
 
@@ -961,9 +961,9 @@ const httpOptions = {
 };
 let LoginDialogComponent = class LoginDialogComponent {
     //TODO Interface for data parameter
-    constructor(dialogRef, users, data) {
+    constructor(dialogRef, http, data) {
         this.dialogRef = dialogRef;
-        this.users = users;
+        this.http = http;
         this.data = data;
         //Sleep helper
         //! For demo only
@@ -983,6 +983,7 @@ let LoginDialogComponent = class LoginDialogComponent {
         });
     }
     sendLogin() {
+        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + 'login', this.data, httpOptions);
     }
     register() {
         this.dialogRef.close();
@@ -990,7 +991,7 @@ let LoginDialogComponent = class LoginDialogComponent {
 };
 LoginDialogComponent.ctorParameters = () => [
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
-    { type: _users_service__WEBPACK_IMPORTED_MODULE_5__["UsersService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
     { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
 ];
 LoginDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1045,50 +1046,6 @@ NotFoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./not-found.component.sass */ "./src/app/not-found/not-found.component.sass")).default]
     })
 ], NotFoundComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/users.service.ts":
-/*!**********************************!*\
-  !*** ./src/app/users.service.ts ***!
-  \**********************************/
-/*! exports provided: UsersService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersService", function() { return UsersService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-
-
-
-
-const loginOptions = {
-    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-        'Content-Type': 'application/json'
-    })
-};
-let UsersService = class UsersService {
-    constructor(http) {
-        this.http = http;
-    }
-    postLogin(data) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + 'login', data, loginOptions);
-    }
-};
-UsersService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-UsersService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], UsersService);
 
 
 

@@ -520,6 +520,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         .subscribe()
                         .unsubscribe();
                 };
+                AppComponent.prototype.gotToLink = function (url) {
+                };
                 AppComponent.prototype.logout = function () {
                     this.router.navigate(['/']);
                 };

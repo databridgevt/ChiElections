@@ -459,6 +459,8 @@ let AppComponent = class AppComponent {
             .subscribe()
             .unsubscribe();
     }
+    gotToLink(url) {
+    }
     logout() {
         this.router.navigate(['/']);
     }

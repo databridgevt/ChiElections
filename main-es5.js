@@ -470,7 +470,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
                     imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })],
                     providers: [
-                        { provide: _angular_common__WEBPACK_IMPORTED_MODULE_8__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_8__["PathLocationStrategy"] }
+                        { provide: _angular_common__WEBPACK_IMPORTED_MODULE_8__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_8__["PathLocationStrategy"] },
+                        { provide: _angular_common__WEBPACK_IMPORTED_MODULE_8__["APP_BASE_HREF"], useValue: '/ChiElections/' }
                     ],
                     exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
                 })

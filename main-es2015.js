@@ -537,6 +537,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./graphs/graphs.component */ "./src/app/graphs/graphs.component.ts");
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
 /* harmony import */ var _login_dialog_login_dialog_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./login-dialog/login-dialog.component */ "./src/app/login-dialog/login-dialog.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 
 //Angular Imports
 
@@ -582,6 +583,7 @@ __webpack_require__.r(__webpack_exports__);
 //FontAwesome
 
 //My Components
+
 
 
 
@@ -645,7 +647,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         // Components Used for Dialog need to be placed in entryComponents
         entryComponents: [_login_dialog_login_dialog_component__WEBPACK_IMPORTED_MODULE_45__["LoginDialogComponent"]],
-        providers: [],
+        providers: [
+            { provide: _angular_common__WEBPACK_IMPORTED_MODULE_46__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_46__["PathLocationStrategy"] }
+        ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
     })
 ], AppModule);

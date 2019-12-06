@@ -452,6 +452,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony import */ var _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphs/graphs.component */ "./src/app/graphs/graphs.component.ts");
             /* harmony import */ var _cities_cities_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cities/cities.component */ "./src/app/cities/cities.component.ts");
             /* harmony import */ var _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./candidates/candidates.component */ "./src/app/candidates/candidates.component.ts");
+            /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
             var routes = [
                 { path: 'candidates', component: _candidates_candidates_component__WEBPACK_IMPORTED_MODULE_7__["CandidatesComponent"] },
                 { path: 'cities', component: _cities_cities_component__WEBPACK_IMPORTED_MODULE_6__["CitiesComponent"] },
@@ -467,7 +468,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             }());
             AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-                    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+                    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })],
+                    providers: [
+                        { provide: _angular_common__WEBPACK_IMPORTED_MODULE_8__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_8__["PathLocationStrategy"] }
+                    ],
                     exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
                 })
             ], AppRoutingModule);
@@ -595,7 +599,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony import */ var _graphs_graphs_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./graphs/graphs.component */ "./src/app/graphs/graphs.component.ts");
             /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
             /* harmony import */ var _login_dialog_login_dialog_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./login-dialog/login-dialog.component */ "./src/app/login-dialog/login-dialog.component.ts");
-            /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
             //Angular Imports
             //Angular Material Components
             //CDK Imports
@@ -660,9 +663,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     ],
                     // Components Used for Dialog need to be placed in entryComponents
                     entryComponents: [_login_dialog_login_dialog_component__WEBPACK_IMPORTED_MODULE_45__["LoginDialogComponent"]],
-                    providers: [
-                        { provide: _angular_common__WEBPACK_IMPORTED_MODULE_46__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_46__["PathLocationStrategy"] }
-                    ],
+                    providers: [],
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
                 })
             ], AppModule);

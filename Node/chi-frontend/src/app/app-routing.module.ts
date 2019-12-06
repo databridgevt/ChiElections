@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { CitiesComponent } from './cities/cities.component';
 import { CandidatesComponent } from './candidates/candidates.component';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/common';
 
 const routes: Routes = [
   { path: 'candidates', component: CandidatesComponent },
@@ -19,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   providers: [
-    { provide: LocationStrategy, useClass: PathLocationStrategy}
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    { provide: APP_BASE_HREF, useValue: '/ChiElections/'}
   ],
   exports: [RouterModule],
 })

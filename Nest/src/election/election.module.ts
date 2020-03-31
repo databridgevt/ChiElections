@@ -2,9 +2,10 @@ import { Module } from '@nestjs/common';
 // Create and import controller: import {}
 import { ElectionService } from './election.service';
 import { ElectionController } from './election.controller';
-import { MongooseModule } from '@nestjs/mongoose';
+import { MongooseModule, getModelToken } from '@nestjs/mongoose';
 import { ElectionSchema } from 'src/schema/election.schema';
 import { CandidateSchema } from 'src/schema/candidate.schema';
+import { model } from 'mongoose';
 
 @Module({
   imports: [
@@ -17,6 +18,16 @@ import { CandidateSchema } from 'src/schema/candidate.schema';
     ),
   ],
   controllers: [ElectionController],
-  providers: [ElectionService],
+  providers: [
+    ElectionService,
+    {
+      provide: getModelToken('Election'),
+      useValue: model('Election', ElectionSchema),
+    },
+    {
+      provide: getModelToken('Candidate'),
+      useValue: model('Candidate', CandidateSchema),
+    },
+  ],
 })
 export class ElectionModule {}

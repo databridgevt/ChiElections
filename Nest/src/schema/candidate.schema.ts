@@ -5,7 +5,9 @@ import * as mongoose from 'mongoose';
 // But the candidates component of the site needs images
 // And blurbs on these candidates
 export const CandidateSchema = new mongoose.Schema({
-  name: String,
-  party: String,
-  office: String,
+  name: {type: String, required: true},
+  party: {type: String, required: true},
+  office: {type: String, required: true},
 });
+
+export const candidateModel = mongoose.model('Candidate', CandidateSchema);

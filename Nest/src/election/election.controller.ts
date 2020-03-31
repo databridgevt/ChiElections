@@ -32,4 +32,14 @@ export class ElectionController {
   async getElection() {
     
   }
+
+  @Delete()
+  async deleteElection() {
+
+  }
+
+  @Put()
+  async updateElection() {
+    
+  }
 }

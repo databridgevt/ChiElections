@@ -19,6 +19,7 @@ import { HealthcheckModule } from './healthcheck/healthcheck.module';
     MongooseModule.forRoot('mongodb://localhost/chicago', {
       connectionName: 'chicago',
     }),
+    MongooseModule.forFeature()
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+    nest:
+        image: tanner9/chielections:nest.0.1
+        build: ./Nest
+        depends_on: 
+            - mongo
+            - redis
+            - nginx
+        deploy:
+            replicas: 5
+            restart_policy:
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+                window: 20s
+            update_config: 
+                parallelism: 2
+                delay: 10s
+        ports: "3000"
+
+    redis:
+        image: redis:alpine
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                    memory: 1G
+            restart_policy:
+                condition: on-failure
+        ports: "6379"
+
+    mongo:
+        image: mongo:bionic
+        ports: "27017"
+        restart: on
+
+    nginx:
+        image: tanner9/chielections:nginx.0.1
+        build: ./Nginx
+        restart_policy:
+            condition: on-failure
+        ports: "80:80"
+

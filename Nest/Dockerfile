@@ -3,7 +3,7 @@ FROM node:13.10-alpine
 
 # Set the user to be non-root
 USER node 
-RUN mkdir /home/node/app
+RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
 
 # Expose port, by default 3000
@@ -18,7 +18,7 @@ RUN npm ci --no-optional
 ENV PATH ./node_modules/.bin/:$PATH
 
 # How Docker determines if a container is still running
-COPY ./healcheck.js .
+COPY ./healthcheck.js .
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD [ "node", "./healthcheck.js" ]
 
 # Copy Compiled Source code

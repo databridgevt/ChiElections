@@ -2,15 +2,17 @@ FROM nginx:alpine
 
 # Delete Default files
 RUN rm /etc/nginx/conf.d/default.conf
-RUN rm /etc/nginx/conf.d/examplessl.conf
-
 RUN mkdir -p /var/www/something.com/
 
-# ? Do I need to make these directories
-# These directories are supposed to be for SSL certificates
-RUN mkdir -p /etc/letsencrypt
-RUN /var/www/certbot
+# Install amce.sh to issue SSL certificates
+RUN apk add wget openssl
+RUN wget -O - https://get.acme.sh | sh
 
 COPY ../Angular/dist/* /var/www/something.com/
-COPY ./nginx.conf /etc/nginx/
+COPY ./election.conf /etc/nginx/conf.d/
 
+# Issue a certificate
+RUN /root/.acme.sh/acme.sh --issue --nginx \
+        -d something.com \
+        -d www.something.com \ 
+        --keylength ec-256

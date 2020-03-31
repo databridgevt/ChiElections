@@ -19,6 +19,7 @@ $ cd ChiElections
 
 If you'd like to make commits you'll need to tell git your email and username. To constrain these changes to this repository, make sure you `cd` in and:
 
+
 ```bash
 git config user.name "<YOUR USERNAME>"
 git config user.email "<YOUR GITHUB EMAIL>"

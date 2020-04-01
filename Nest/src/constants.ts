@@ -7,7 +7,7 @@
 export const constants = {
   csvMIMEType: 'text/csv',
   database_connection: 'DATABASE_CONNECTION',
-  database_uri: 'mongodb://localhost:27017/chicago',
+  database_uri: 'mongodb://mongo:27017/chicago',
   election_model: 'ELECTION_MODEL',
   candidate_model: 'CANDIDATE_MODEL',
   port: 3000,

@@ -1,9 +1,9 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import {
-  CreateElectionDTO,
   PrecinctFields,
   WardFields,
-} from '../dto/create-election.dto';
+} from '../interface/election.interface';
+import { CreateElectionDTO } from '../dto/create-election.dto';
 
 @Injectable()
 export class TranslateCsvMiddleware implements NestMiddleware {

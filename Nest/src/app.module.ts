@@ -11,12 +11,13 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { XlsxMiddleware } from './middleware/xlsx.middleware';
 import { TranslateCsvMiddleware } from './middleware/translate-csv.middleware';
 import { HealthcheckModule } from './healthcheck/healthcheck.module';
+import { constants } from './constants';
 
 @Module({
   imports: [
     ElectionModule,
     HealthcheckModule,
-    MongooseModule.forRoot('mongodb://localhost/chicago', {
+    MongooseModule.forRoot(constants.database_uri, {
       connectionName: 'chicago',
     }),
     MongooseModule.forFeature()

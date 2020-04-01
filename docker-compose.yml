@@ -18,7 +18,8 @@ services:
             update_config: 
                 parallelism: 2
                 delay: 10s
-        ports: "3000"
+        ports: 
+            - "3000"
 
     redis:
         image: redis:alpine
@@ -29,17 +30,22 @@ services:
                     memory: 1G
             restart_policy:
                 condition: on-failure
-        ports: "6379"
+        ports: 
+            - "6379"
 
     mongo:
         image: mongo:bionic
-        ports: "27017"
-        restart: on
+        ports: 
+            - "27017"
+        restart: on-failure
 
     nginx:
         image: tanner9/chielections:nginx.0.1
         build: ./Nginx
-        restart_policy:
-            condition: on-failure
-        ports: "80:80"
+        deploy:
+            restart_policy:
+                condition: on-failure
+        ports: 
+            - "80:80"
+            - "443:443"
 

@@ -8,11 +8,12 @@ RUN mkdir -p /var/www/something.com/
 RUN apk add wget openssl
 RUN wget -O - https://get.acme.sh | sh
 
-COPY ../Angular/dist/* /var/www/something.com/
+COPY ./dist/* /var/www/something.com/
 COPY ./election.conf /etc/nginx/conf.d/
 
 # Issue a certificate
-RUN /root/.acme.sh/acme.sh --issue --nginx \
-        -d something.com \
-        -d www.something.com \ 
-        --keylength ec-256
+# TODO Uncomment on an actual server
+#RUN /root/.acme.sh/acme.sh --issue --nginx \
+#        -d something.com \
+#        -d www.something.com \ 
+#        --keylength ec-256

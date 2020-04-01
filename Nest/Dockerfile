@@ -1,8 +1,13 @@
 # User node 13.10 and with the alpine distro for smallest image size
 FROM node:13.10-alpine
 
-# Set the user to be non-root
-USER node 
+# Install NPM modules build dependencies
+RUN apk --no-cache --virtual build-dependencies add \
+    python \
+    make \
+    g++
+
+# Set a working directory
 RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
 
@@ -14,14 +19,21 @@ EXPOSE $PORT
 COPY package*.json ./
 RUN npm ci --no-optional
 
+# Remove Previous Build Dependencies
+RUN apk del build-dependencies
+
 # Update path to include node_modules
 ENV PATH ./node_modules/.bin/:$PATH
 
+# Copy src, Should I build src before building a container?
+COPY . .
+
 # How Docker determines if a container is still running
-COPY ./healthcheck.js .
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD [ "node", "./healthcheck.js" ]
 
-# Copy Compiled Source code
-COPY dist dist
+# Build src
+RUN npm run build
 
+# Set the user to be non-root
+USER node 
 CMD ["node", "dist/main.js"]

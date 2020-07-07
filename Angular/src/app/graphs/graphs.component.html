@@ -1,1 +1,58 @@
-<p>graphs works!</p>
+<mat-toolbar>
+  <!--For Query Inputs-->
+  <mat-form-field appearance="fill">
+    <mat-label>Year</mat-label>
+    <input matInput type="number" value="1983" [(ngModel)]="inputYear">
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Party</mat-label>
+    <mat-select>
+      <mat-option>
+        Republican
+      </mat-option>
+      <mat-option>
+        Democrat
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+</mat-toolbar>
+
+<div class="mat-elevation-z6">
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="Year">
+      <th mat-header-cell *matHeaderCellDef> Year </th>
+      <td mat-cell *matCellDef="let election"> {{election.year}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let election"> {{election.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ward">
+      <th mat-header-cell *matHeaderCellDef> Ward </th>
+      <td mat-cell *matCellDef="let election"> {{election.ward}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Precinct">
+      <th mat-header-cell *matHeaderCellDef> Precinct </th>
+      <td mat-cell *matCellDef="let election"> {{election.precinct}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Vote">
+      <th mat-header-cell *matHeaderCellDef> Vote </th>
+      <td mat-cell *matCellDef="let election"> {{election.vote}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

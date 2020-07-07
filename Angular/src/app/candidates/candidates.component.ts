@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-candidates',
   templateUrl: './candidates.component.html',
-  styleUrls: ['./candidates.component.sass'],
+  styleUrls: ['./candidates.component.scss'],
 })
 export class CandidatesComponent implements OnInit, OnDestroy {
   colNum: number;

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ElectionService } from '../election.service';
 
 @Component({
   selector: 'app-graphs',
@@ -8,21 +9,39 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./graphs.component.scss']
 })
 export class GraphsComponent implements OnInit {
-
-
   
   displayedColumns: string[] = ['Year', 'Name', 'Ward', 'Precinct', 'Vote'];
-  dataSource = new MatTableDataSource<Election>(ELECTION_DATA);
+  dataSource = new MatTableDataSource<any>(ELECTION_DATA);
 
-  constructor() { }
+  // QueryForm Inputs
+  inputYear = undefined;
+  inputParty = undefined;
+  inputCandidate = undefined;
+  inputWard = undefined;
+  inputPrecinct = undefined;
+
+  constructor(private electionService: ElectionService) { }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
   }
 
-  
+  search() {
+    // Build query object
+    const electionQuery = {inputYear: this.inputYear, inputParty: this.inputParty, inputCandidate: this.inputCandidate, inputWard: this.inputWard, inputPrecinct: this.inputPrecinct}
+    
+    const newElectionData = []
+    this.electionService.retrieveElection(electionQuery).subscribe(election => newElectionData.push(election))
+
+    // Re-displaying will need testing after backend changes
+    this.dataSource = new MatTableDataSource(newElectionData)
+  }
+
 }
+
+
+// Old Baked-in Data
 
 export interface Election {
   year: number;

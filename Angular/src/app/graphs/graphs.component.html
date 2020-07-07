@@ -6,10 +6,27 @@
     </mat-select>
   </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Ward</mat-label>
+    <input matInput type="number" [(ngModel)]="inputWard">
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precinct</mat-label>
+    <input matInput type="number" [(ngModel)]="inputWard">
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Candidate</mat-label>
+    <input matInput type="text" [(ngModel)]="inputCandidate">
+    </mat-select>
+  </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Party</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="inputParty">
       <mat-option>
         Republican
       </mat-option>
@@ -19,6 +36,7 @@
     </mat-select>
   </mat-form-field>
 
+  <button mat-raised-button color="accent" (click)="search()">Search</button>
 
 </mat-toolbar>
 

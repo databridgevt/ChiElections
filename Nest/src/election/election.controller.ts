@@ -21,8 +21,10 @@ export class ElectionController {
 
     try {
       await this.electionService.createElection(createElectionDTO)
+
     } catch (err) {
       // I probably caught the 500 thrown when something can't be stored in a database
+      return err
     }
 
     return `Created Election: ${createElectionDTO.year}`
@@ -30,7 +32,14 @@ export class ElectionController {
 
   @Get()
   async getElection() {
-    
+    let electionDocument = undefined
+    try {
+      electionDocument = await this.electionService.getElection(1993)
+    } catch (err) {
+
+    }
+
+    return electionDocument
   }
 
   @Delete()

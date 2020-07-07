@@ -6,6 +6,7 @@ import { CreateCandidateDTO } from '../dto/create-candidate.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Election } from 'src/interface/election.interface';
 import { Candidate } from 'src/interface/candidate.interface';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Injectable()
 export class ElectionService {
@@ -17,6 +18,10 @@ export class ElectionService {
   ) {}
 
   async createElection(createElectionDTO: CreateElectionDTO): Promise<Election> {
+    
+   
+    console.log(createElectionDTO)
+
     // Save each of the candidates first
     const promisedCandidates = createElectionDTO.candidates.map(
       createCandidateDTO => new this.candidateModel(createCandidateDTO).save(),
@@ -30,6 +35,8 @@ export class ElectionService {
       // Some candidate couldn't be store in the db
       throw new InternalServerErrorException('Failed to Save Candidates');
     }
+
+    console.log('here')
 
     // Replace references in createElectionDTO to match election schema
     const newElection = {
@@ -56,9 +63,25 @@ export class ElectionService {
     };
 
     //Create a model from the built election
-    const createdElection = new this.electionModel(newElection);
+    let createdElection = undefined
+    try {
+      createdElection = new this.electionModel(newElection);
+    } catch (err) {
+      console.log('Could not create model')
+    }
 
     //Return the Promise created by saving a new model
-    return createdElection.save();
+    let savedModel = undefined
+    try {
+      savedModel = createdElection.save()
+    } catch (err) {
+      console.log('Could not save model')
+    }
+
+    return savedModel;
+  }
+
+  async getElection(year: number): Promise<any> {
+    return this.electionModel.find({year: year})
   }
 }

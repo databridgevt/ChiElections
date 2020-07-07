@@ -10,6 +10,7 @@ export class HealthcheckController {
   @Get()
   checkHealth() {
     // TODO return JSON of server stats
+    console.log('Looking Good.')
     return 'Looking Good.'
   }
 }

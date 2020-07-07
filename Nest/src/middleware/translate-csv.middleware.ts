@@ -8,7 +8,9 @@ import { CreateElectionDTO } from '../dto/create-election.dto';
 @Injectable()
 export class TranslateCsvMiddleware implements NestMiddleware {
   use(req: any, res: any, next: () => void) {
-    const csv: string = req.body;
+    const csv: string = Object.keys(req.body)[0]; //? Why do I have to get the keys
+
+    //const csv: string = req.body
 
     // Destructure rows
     const [headers, parties, offices, districts, ...votes] = csv
@@ -79,5 +81,6 @@ export class TranslateCsvMiddleware implements NestMiddleware {
     req.body = createElectionDTO;
 
     next();
+
   }
 }

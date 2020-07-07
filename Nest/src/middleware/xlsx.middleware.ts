@@ -7,12 +7,18 @@ import { constants } from '../constants';
 @Injectable()
 export class XlsxMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: () => void) {
+
     const contentType = req.headers['Content-Type'];
 
+    //!
+    next();
+
     // Check if Request contains an xlsx file
-    if (!contentType || !contentType.includes(constants.xlsxMIMEType))
+    if (!contentType ) {
       // If not, just call the next middleware
+      console.log('skipping...')
       next();
+    }
 
     // Convert XLSX to CSV
     const workbook = XLSX.read(req.body);

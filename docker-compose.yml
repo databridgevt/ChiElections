@@ -40,12 +40,12 @@ services:
         restart: on-failure
 
     nginx:
-        image: tanner9/chielections:nginx.0.1
-        build: ./Nginx
+        image: nginx:mainline-alpine
+        #image: tanner9/chielections:nginx.0.1
+        #build: ./Nginx
         deploy:
             restart_policy:
                 condition: on-failure
         ports: 
-            - "80:80"
-            - "443:443"
+            - 80:80
 

@@ -14,6 +14,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "se
 # Try a "Hello World" HTML
 COPY ./dist/* /var/www/something.com/
 #COPY ./election.conf /etc/nginx/conf.d/
+COPY ./example.org /etc/nginx/conf.d/
 
 # Issue a certificate
 # TODO Uncomment on an actual server

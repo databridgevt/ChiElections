@@ -1,76 +1,157 @@
-<mat-toolbar>
-  <!--For Query Inputs-->
-  <mat-form-field appearance="fill">
-    <mat-label>Year</mat-label>
-    <input matInput type="number" value="1983" [(ngModel)]="inputYear">
-    </mat-select>
-  </mat-form-field>
+<br />
+<mat-card style="margin: auto; display: block">
+    <mat-toolbar
+        style="margin-bottom: 20px; margin-top: 20px; display: content; background-color: #eeeeee;"
+    >
+        <!--For Query Inputs -->
 
-  <mat-form-field appearance="fill">
-    <mat-label>Ward</mat-label>
-    <input matInput type="number" [(ngModel)]="inputWard">
-    </mat-select>
-  </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Office</mat-label>
+            <div style="display: grid; height: 60px;">
+                <input matInput type="text" [(ngModel)]="inputOffice">
+            </div>
+        </mat-form-field>
+        <mat-form
+        <mat-form-field appearance="fill">
+            <mat-label>Year</mat-label>
+            <div style="display: grid; height: 60px;">
+                <input matInput type="number" [(ngModel)]="inputYear" />
 
-  <mat-form-field appearance="fill">
-    <mat-label>Precinct</mat-label>
-    <input matInput type="number" [(ngModel)]="inputWard">
-    </mat-select>
-  </mat-form-field>
+                <mat-slider
+                    thumbLabel
+                    [displayWith]="formatLabel"
+                    tickInterval="1000"
+                    min="1900"
+                    max="2020"
+                    [(ngModel)]="inputYear"
+                ></mat-slider>
+            </div>
+        </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Candidate</mat-label>
-    <input matInput type="text" [(ngModel)]="inputCandidate">
-    </mat-select>
-  </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Ward</mat-label>
+            <div style="display: grid; height: 60px;">
+                <input matInput type="number" [(ngModel)]="inputWard" />
+                <br />
+                <br />
+            </div>
+        </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Party</mat-label>
-    <mat-select [(ngModel)]="inputParty">
-      <mat-option>
-        Republican
-      </mat-option>
-      <mat-option>
-        Democrat
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Precinct</mat-label>
+            <div style="display: grid; height: 60px;">
+                <input matInput type="number" [(ngModel)]="inputPrecinct" />
+                <br />
+                <br />
+            </div>
+        </mat-form-field>
 
-  <button mat-raised-button color="accent" (click)="search()">Search</button>
+        <mat-form-field appearance="fill">
+            <mat-label>Candidate</mat-label>
+            <div style="display: grid; height: 60px;">
+                <input matInput type="text" [(ngModel)]="inputCandidate" />
+                <br />
+                <br />
+            </div>
+        </mat-form-field>
 
-</mat-toolbar>
+        <mat-form-field appearance="fill">
+            <mat-label>Party</mat-label>
+            <div style="display:grid; height: 60px;">
+                <mat-select [(ngModel)]="inputParty">
+                    <mat-option>
+                        Republican
+                    </mat-option>
+                    <mat-option>
+                        Democrat
+                    </mat-option>
+                </mat-select>
+                <br />
+                <br />
+            </div>
+        </mat-form-field>
+    </mat-toolbar>
 
-<div class="mat-elevation-z6">
-  <table mat-table [dataSource]="dataSource">
+    <mat-card-content>
+        <div
+            class="mat-elevation-z6"
+            style="margin-top: 10px; position: relative; width: 100%; top: 80px;"
+        >
+            <table mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="Year">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Year
+                    </th>
+                    <td mat-cell *matCellDef="let election">
+                        {{ election.year }}
+                    </td>
+                </ng-container>
 
-    <ng-container matColumnDef="Year">
-      <th mat-header-cell *matHeaderCellDef> Year </th>
-      <td mat-cell *matCellDef="let election"> {{election.year}} </td>
-    </ng-container>
+                <ng-container matColumnDef="Name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Name
+                    </th>
+                    <td mat-cell *matCellDef="let election">
+                        {{ election.name }}
+                    </td>
+                </ng-container>
 
-    <ng-container matColumnDef="Name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let election"> {{election.name}} </td>
-    </ng-container>
+                <ng-container matColumnDef="Ward">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Ward
+                    </th>
+                    <td mat-cell *matCellDef="let election">
+                        {{ election.ward }}
+                    </td>
+                </ng-container>
 
-    <ng-container matColumnDef="Ward">
-      <th mat-header-cell *matHeaderCellDef> Ward </th>
-      <td mat-cell *matCellDef="let election"> {{election.ward}} </td>
-    </ng-container>
+                <ng-container matColumnDef="Precinct">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Precinct
+                    </th>
+                    <td mat-cell *matCellDef="let election">
+                        {{ election.precinct }}
+                    </td>
+                </ng-container>
 
-    <ng-container matColumnDef="Precinct">
-      <th mat-header-cell *matHeaderCellDef> Precinct </th>
-      <td mat-cell *matCellDef="let election"> {{election.precinct}} </td>
-    </ng-container>
+                <ng-container matColumnDef="Vote">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Vote
+                    </th>
+                    <td mat-cell *matCellDef="let election">
+                        {{ election.vote }}
+                    </td>
+                </ng-container>
 
-    <ng-container matColumnDef="Vote">
-      <th mat-header-cell *matHeaderCellDef> Vote </th>
-      <td mat-cell *matCellDef="let election"> {{election.vote}} </td>
-    </ng-container>
+                <ng-container matColumnDef="% Total">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        % Total
+                    </th>
+                    <td mat-cell *matCellDef="let election">
+                        {{election.percent}}
+                        
+                    </td>
+                </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr
+                    mat-row
+                    *matRowDef="let row; columns: displayedColumns"
+                ></tr>
+            </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-</div>
+            <mat-paginator
+                [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons
+            ></mat-paginator>
+        </div>
+    </mat-card-content>
+    <mat-card-actions style="position: absolute; bottom: 15px;">
+        <button mat-raised-button color="accent" (click)="search()">
+            Search
+        </button>
+        <button mat-raised-button color="accent" (click)="download()">
+            Download
+        </button>
+    </mat-card-actions>
+</mat-card>

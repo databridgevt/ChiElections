@@ -2,44 +2,63 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ElectionService } from '../election.service';
+import { MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-graphs',
   templateUrl: './graphs.component.html',
-  styleUrls: ['./graphs.component.scss']
+  styleUrls: ['./graphs.component.scss'],
 })
 export class GraphsComponent implements OnInit {
-  
   displayedColumns: string[] = ['Year', 'Name', 'Ward', 'Precinct', 'Vote'];
-  dataSource = new MatTableDataSource<any>(ELECTION_DATA);
+  dataSource = new MatTableDataSource<Election>(BLANK_ELECTION_DATA);
 
   // QueryForm Inputs
-  inputYear = undefined;
-  inputParty = undefined;
-  inputCandidate = undefined;
-  inputWard = undefined;
-  inputPrecinct = undefined;
+  inputYear = 0;
+  inputParty = '';
+  inputCandidate = '';
+  inputWard = 0;
+  inputPrecinct = 0;
 
-  constructor(private electionService: ElectionService) { }
+  candidates = [{ name: 'Washington' }, {name: 'Epton'}]
+
+  constructor(private electionService: ElectionService) {}
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
   }
-
-  search() {
-    // Build query object
-    const electionQuery = {inputYear: this.inputYear, inputParty: this.inputParty, inputCandidate: this.inputCandidate, inputWard: this.inputWard, inputPrecinct: this.inputPrecinct}
-    
-    const newElectionData = []
-    this.electionService.retrieveElection(electionQuery).subscribe(election => newElectionData.push(election))
-
-    // Re-displaying will need testing after backend changes
-    this.dataSource = new MatTableDataSource(newElectionData)
+  
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
-}
+  search() {
+    
+    // Build query object
+    const electionQuery = {
+      inputYear: this.inputYear,
+      inputParty: this.inputParty,
+      inputCandidate: this.inputCandidate,
+      inputWard: this.inputWard,
+      inputPrecinct: this.inputPrecinct,
+    };
 
+    let newElectionData = [];
+    newElectionData = this.electionService
+      .retrieveElection(electionQuery)
+    //  .subscribe(election => newElectionData.push(election));
+
+    newElectionData = newElectionData.filter((row) => { return row.year === this.inputYear || row.name === this.inputCandidate || row.party === this.inputWard || row.precinct === this.inputPrecinct});
+
+    // Re-displaying will need testing after backend changes
+    //this.dataSource = new MatTableDataSource(newElectionData);
+    this.dataSource = new MatTableDataSource(newElectionData)
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+}
 
 // Old Baked-in Data
 
@@ -51,38 +70,4 @@ export interface Election {
   vote: number;
 }
 
-const ELECTION_DATA: Election[] = [
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 1, vote: 238,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 2, vote: 493,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 3, vote: 483,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 4, vote: 110,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 5, vote: 536,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 6, vote: 777,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 7, vote: 277,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 8, vote: 646,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 9, vote: 341,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 10, vote: 19,
-  },
-  {
-    year: 1983, name: 'Harold Washington', ward: 1, precinct: 11, vote: 30,
-  },
-]
+const BLANK_ELECTION_DATA: Election[] = [];

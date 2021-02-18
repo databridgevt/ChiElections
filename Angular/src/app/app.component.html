@@ -41,50 +41,56 @@
     </button>
 </mat-toolbar>
 
-<!--The rest of the webpage needs to be rendered inside of the sidenav,
+<div
+    id="main_container"
+    style="height: 100%; display: flex; align-items: center; justify-content: center;"
+>
+    <!--The rest of the webpage needs to be rendered inside of the sidenav,
     so the pretty animation can affect all relevant parts of the 
     webpage-->
-<mat-sidenav-container
-    hasBackdrop="false"
-    id="container"
-    fullscreen
-    class="mat-typography sidenav-container"
->
-    <!--Two way bind the opened boolean to programmatically open side menu-->
-    <mat-sidenav
-        class="mat-elevation-z2"
-        #sidenav
-        mode="side"
-        [(opened)]="opened"
+    <mat-sidenav-container
+        hasBackdrop="false"
+        id="container"
+        fullscreen
+        class="mat-typography sidenav-container"
+        style="background-image: url('../assets/images/ChicagoLakefrontPanorama1938.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"
     >
-        <!--Links to Locations in app should go here-->
+        <!--Two way bind the opened boolean to programmatically open side menu-->
+        <mat-sidenav
+            class="mat-elevation-z2"
+            #sidenav
+            mode="side"
+            [(opened)]="opened"
+        >
+            <!--Links to Locations in app should go here-->
 
-        <!-- Vertical Tabs Idea 
+            <!-- Vertical Tabs Idea 
     <nav mat-tab-nav-bar color="accent">
       <a mat-tab-link href=".">First Link</a>
       <a mat-tab-link href=".">Second Link</a>
     </nav> 
     -->
-        <div (click)="sidenav.close()">
-            <a mat-button id="sidenav-button" routerLink="">
-                HOME
-            </a>
-            <br />
-            <a mat-button id="sidenav-button" routerLink="cities">
-                CITIES
-            </a>
-            <br />
-            <a mat-button id="sidenav-button" routerLink="candidates">
-                CANDIDATES
-            </a>
-            <br />
-            <a mat-button id="sidenav-button" routerLink="graphs">
-                GRAPH
-            </a>
-        </div>
-    </mat-sidenav>
-    <!--Implicit Main Content-->
+            <div (click)="sidenav.close()">
+                <a mat-button id="sidenav-button" routerLink="">
+                    HOME
+                </a>
+                <br />
+                <a mat-button id="sidenav-button" routerLink="cities">
+                    CITIES
+                </a>
+                <br />
+                <a mat-button id="sidenav-button" routerLink="candidates">
+                    CANDIDATES
+                </a>
+                <br />
+                <a mat-button id="sidenav-button" routerLink="graphs">
+                    GRAPH
+                </a>
+            </div>
+        </mat-sidenav>
+        <!--Implicit Main Content-->
+        <!--Routes get generated as Siblings to router-outlet-->
 
-    <!--Routes get generated as Siblings to router-outlet-->
-    <router-outlet></router-outlet>
-</mat-sidenav-container>
+        <router-outlet></router-outlet>
+    </mat-sidenav-container>
+</div>

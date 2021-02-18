@@ -1,3 +1,16 @@
 table{ 
   width: 100%
 }
+
+mat-card {
+    height: 70%;
+    width: 95%;
+    opacity: 0.9;
+    background-color:#eeeeee;
+    border: 5px;
+    border-color: #e0e0e0;
+}
+
+mat-toolbar > mat-form-field {
+  height: 15px;
+}

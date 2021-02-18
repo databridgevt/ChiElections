@@ -48,4 +48,16 @@ services:
                 condition: on-failure
         ports: 
             - 80:80
+            - 443:443
+        volumes:
+            - .Nginx/data/nginx:etc/nginx/conf.d
+
+    # Automate SSL Certifications
+    certbot:
+        image: certbot/certbot
+        volumes:
+            - ./Nginx/certbot/conf:/etc/letsencrypt
+            - ./Nginx/certbot/www:/var/www/certbot
+
+
 

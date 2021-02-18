@@ -5,7 +5,9 @@ import * as bodyParser from 'body-parser';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
-    
+   
+    app.enableCors();
+
     // All routes will be prefixed with 'api'
     app.setGlobalPrefix('api');
 
